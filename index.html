@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refactored Session Note Page Started: 8/31/2020</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <main id="framework">
+        <div id="genInfo">
+            <h1>Session Summary</h1>
+            <br />
+            <section>
+                Client Name: <input type="text" id="clientFirstName" placeholder="First Name">
+                <input type="text" id="clientLastName" placeholder="Last Name">
+                Gender: <select id="gender">
+                    <option value="">(Select Gender)</option>
+                    <option value="He">M</option>
+                    <option value="She">F</option>
+                </select>
+                <br />
+                Staff Name: <input type="text" id="staffFirstName" placeholder="First Name">
+                <input type="text" id="staffLastName" placeholder="Last Name">
+                <br /> 
+            </section>
+        </div>
+        <div class="multiselect">
+            <div class="selectBox" onclick="showCheckboxes()">
+              <select>
+                <option>Select goals</option>
+              </select>
+              <div class="overSelect"></div>
+            </div>
+          <div id="checkboxes">
+           <label for="myCheck1">
+              <input type="checkbox" id="checkBox1" onclick="myFunction()"> Goal 1: Behaviors
+           </label>
+           <label for="myCheck2">
+              <input type="checkbox" id="checkBox2" onclick="myFunction()"> Goal 2: Conversation
+           </label>
+           <label for="myCheck3">
+              <input type="checkbox" id="checkBox3" onclick="myFunction()"> Goal 3: Emotions
+           </label>
+           <label for="myCheck4">
+              <input type="checkbox" id="checkBox4" onclick="myFunction()"> Goal 4: Make a schedule for himself and implement
+           </label>
+           <label for="myCheck5">
+              <input type="checkbox" id="checkBox5" onclick="myFunction()"> Goal 5: Plan Routine/Schedule
+           </label>
+           <label for="myCheck6">
+              <input type="checkbox" id="checkBox6" onclick="myFunction()"> Goal 6: Functional Reading Material
+           </label>
+           <label for="myCheck7">
+              <input type="checkbox" id="checkBox7" onclick="myFunction()"> Goal 7: Meal Planning
+           </label>
+           <label for="myCheck8">
+              <input type="checkbox" id="checkBox8" onclick="myFunction()"> Goal 8: Laundry/Bed Routine
+           </label>
+           <label for="myCheck9">
+              <input type="checkbox" id="checkBox9" onclick="myFunction()"> Goal 9: Clean Room and Organize
+           </label>
+           <label for="myCheck10">
+              <input type="checkbox" id="checkBox10" onclick="myFunction()"> Parent Goal: Limiting Electronics
+          </label>
+          </div>
+        </div>
+        <div id="grid-1" style="display: none;">
+            <h2>Goal 1: Behavior</h2>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Scripting: </label>
+                <input type="text" name="numOfScripts" class="rounded2" id="numOfScripts">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Verbal Protest: </label>
+                <input type="text" name="verbalProtest" class="rounded2" id="verbalProtest">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Tantrum: </label>
+                <input type="text" name="tantrumNumber" class="rounded2" id="tantrumNumber">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Inappropriate Comments: </label>
+                <input type="text" name="inappropriateComments" class="rounded2" id="inappropriateComments">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Inflexibility: </label>
+                <input type="text" name="inflexibilityTimes" class="rounded2" id="inflexibilityTimes">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Perseveration: </label>
+                <input type="text" name="perseveratedTimes" class="rounded2" id="perseveratedTimes">
+            </section>
+            <br />
+            <textarea style="width:600px;height:100px;" name="outputForm" id="outputForm"></textarea>
+            <br />
+            <input type="button" value="Submit" onclick="goalOne();"/>
+        </div>
+        <div id="grid-2" style="display: none;">
+            <h2>Goal 2: Conversation</h2>
+            <br />
+            <section class='grid-child'>
+                <label for="convo">Activity: </label>
+                <input type="text" name="activity" id="convoActivity" class="behavior">
+            </section>
+            <section class='grid-child'>
+                <label for="convo">Identify Topic: </label>
+                <input type="text" name="identify-topic" id="identityTopicPrompts" class="behavior">
+             </section>
+             <section class='grid-child'>
+                <label for="convo">Prompts to orient to partner: </label>
+                <input type="text" name="orient-part" id="promptsToOrient" class="behavior">
+             </section>
+             <section class='grid-child'>
+                <label for="convo">Prompts to stay on topic: </label>
+                <input type="text" name="stay-topic" id="promptsOnTopic" class="behavior">
+             </section>
+             <section class='grid-child'>
+                <label for="convo">Inappropriate comments: </label>
+                <input type="text" name="inflexibility" id="inappropriateCommentsConvo" class="behavior">
+             </section>
+             <section class='grid-child'>
+                <label for="convo">Percent correct on activity: </label>
+                <input type="text" name="percent-act" id="percentCorrect" class="behavior">
+             </section>
+             <br />
+             <textarea style="width:600px;height:100px;" name="outputForm2" id="outputForm2"></textarea>
+             <br />
+             <input type="button" value="Submit!" onclick="goalTwo();">
+        </div>
+        <div id="grid-3" style="display: none;">
+            <h2>Goal 3: Emotions</h2>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Activity/Emotions: </label>
+                <input type="text" name="activity" id="activityEmotion" class="behavior">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Identify Emotions: </label>
+                <input type="text" name="identify-emotions" id="promptsToIdentifyEmotion" class="behavior">
+             </section>
+             <section class='grid-child'>
+                <label for="behavior">Level of understanding: </label>
+                <select class="level-understanding" id="levelUnderstandingEmotion" name="understanding">
+                    <option value=""></option>
+                    <option value="he did not understand">he did not understand</option>
+                    <option value="fair">fair</option>
+                    <option value="good">good</option>
+                    <option value="excellent">excellent</option>
+                </select>
+             </section>
+             <br />
+             <textarea style="width:600px;height:100px;" name="outputForm3" id="outputForm3"></textarea>
+             <br />
+             <input type="button" value="Submit!" onclick="goalThree();" />
+        </div>
+        <div id="grid-4" style="display: none;">
+            <h2>Goal 4: Make a schedule for himself to implement</h2>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Prompts to create a schedule</label>
+                <input type="text" name="activity" id="promptsCreateSchedule" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior"># of prompts to engage in 20 mins of exercise</label>
+                <input type="text" name="identify-topic" id="promptsExercise" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior"># of prompts to implement calming strategy</label>
+                <input type="text" name="orient-part" id="promptCalmStrategy" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior"># of prompts to engage in leisure activity</label>
+                <input type="text" name="stay-topic" id="promptLeisure" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior"># of prompts for healthy cooking</label>
+                <input type="text" name="inflexibility" id="promptHealthy" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior"># of prompts to work in organized manner</label>
+                <input type="text" name="percent-act" id="promptOrgManner" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior"># of prompts to complete 3 chores using a checklist</label>
+                <input type="text" name="percent-act" id="promptThreeChore" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior"># of prompts (goal 3 or fewer)</label>
+                <input type="text" name="percent-act" id="totalPromptsSchedule" class="behavior">
+            </section>
+            <br />
+            <textarea style="width:600px;height:100px;" name="outputForm4" id="outputForm4"></textarea>
+            <br />
+            <input type="button" value="Submit!" onclick="goalFour();" />
+        </div>
+        <div id="grid-5" style="display: none;">
+            <h2>Goal 5: Plan Routine/Schedule</h2>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Activity</label>
+                <input type="text" name="activity" id="activitySchedule" class="behavior">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Did he create a checklist? </label>
+                <select name="dropdown" id="didCreateChecklist">
+                    <option value=""></option>
+                    <option value="did">yes</option>
+                    <option value="did not">no</option>
+                </select>
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Number of steps for task</label>
+                <input type="text" name="steps-task" id="numberOfSteps" class="behavior">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Prompts to Complete Task</label>
+                <input type="text" name="prompts-task-complete" id="promptsToCreateTask" class="behavior">
+            </section>          
+            <section class='grid-child'>
+                <label for="behavior">Did he check off his completed tasks?</label>
+                <select name="" id="didCheckOff">
+                    <option value=""></option>
+                    <option value="checked off">yes</option>
+                    <option value="did not check off">no</option>
+                </select>
+            </section>     
+            <section class='grid-child'>
+                <label for="behavior">Verbal Protest</label>
+                <input type="text" name="verbal-protesting" id="verballyProtestTask" class="behavior">
+            </section>
+            <br />
+            <textarea style="width:600px;height:100px;" name="outputForm5" id="outputForm5"></textarea>
+            <br />
+            <input type="button" value="Submit!" onclick="goalFive();" />                                            
+        </div>
+        <div id="grid-6" style="display: none;">
+            <h2 title="Baseline: Andrew needs to complete 1-2 activities from his conversation workbook in his binder each session">Goal 6: Functional Reading Material</h2>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Description of Reading Material</label>
+                <input type="text" name="desc-read-mat" id="readingMaterial" class="behavior">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Prompts to Complete Activity </label>
+                <input type="text" name="complete-act" id="promptsToComplete" class="behavior">
+             </section>
+            <section class='grid-child'>
+                <label for="behavior">Percent correct on Activity</label>
+                <input type="text" name="percent-act" id="percentCorrectReading" class="behavior">
+            </section>
+            <br />
+            <textarea style="width:600px;height:100px;" name="outputForm6" id="outputForm6"></textarea>
+            <br />
+            <input type="button" value="Submit!" onclick="goalSix();" />
+            <br />   
+        </div>
+        <div id="grid-7" style="display: none;">
+            <h2 title="Baseline: Andrew needs to complete 1-2 activities from his conversation workbook in his binder each session">Goal 7: Meal Planning</h2>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Meal Description</label>
+                <input type="text" name="meal-desc" id="mealDescription" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Creates a Checklist (# of prompts)</label>
+                <input type="text" name="prompt-check" id="createMealCheck" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Prepares the meal (# of prompts)</label>
+                <input type="text" name="percent-act" id="prepareMeal" class="behavior">
+            </section>
+            <br />    
+            <section class='grid-child'>
+                <label for="behavior">Follows a checklist (# of prompts)</label>
+                <input type="text" name="checklist" id="promptFollowList" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Total # of prompts (goal of 4 or less)</label>
+                <input type="text" name="percent-act" id="totalPromptsMeal" class="behavior">
+            </section>
+            <br />            
+            <br />
+            <textarea style="width:600px;height:100px;" name="outputForm7" id="outputForm7"></textarea>
+            <br />
+            <input type="button" value="Submit!" onclick="goalSeven();" />        
+        </div>                    
+        <div id="grid-8" style="display: none;">
+            <h2 title="Baseline: Andrew needs to complete 1-2 activities from his conversation workbook in his binder each session">Goal 8: Laundry/Bed Routine </h2>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Number of prompts to wash bedding</label>
+                <input type="text" name="desc-read-mat" id="promptWashBedding" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Number of prompts to dry bedding</label>
+                <input type="text" name="complete-act" id="promptsDryBedding" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Number of prompts to Remake bed</label>
+                <input type="text" name="percent-act" id="promptsRemakeBed" class="behavior">
+            </section>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Total # of Prompts (goal 3 or less)</label>
+                <input type="text" name="percent-act" id="promptsTotalBed" class="behavior">
+            </section>
+            <br />
+            <textarea style="width:600px;height:100px;" name="outputForm8" id="outputForm8"></textarea>
+            <br />
+            <input type="button" value="Submit!" onclick="goalEight();" />     
+        </div>
+        <div id="grid-9" style="display: none;">
+            <h2 title="Baseline: When Andrew is shown a picture of his room (clean and organized) he will use it and clean his room.">Goal 9: Clean Room and Organize</h2>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Task</label>
+                <input type="text" name="desc-read-mat" id="taskRoomOrganize" class="behavior">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior"># of prompts to check picture</label>
+                <input type="text" name="complete-act" id="promptsCheckPic" class="behavior">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior"># of prompts to complete</label>
+                <input type="text" name="percent-act" id="promptsToCompleteTask" class="behavior">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior"># of protests</label>
+                <input type="text" name="percent-act" id="numberProtests" class="behavior">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Total # of prompts to complete</label>
+                <input type="text" name="percent-act" id="totalPromptsClean" class="behavior">
+             </section>
+             <br />
+             <textarea style="width:600px;height:100px;" name="outputForm9" id="outputForm9"></textarea>
+             <br />
+             <input type="button" value="Submit!" onclick="goalNine();" />                      
+        </div>
+        <div id="grid-10" style="display: none;">
+            <h2 title="Baseline: Create Monitoring system for Andrew to limit electronic use to 90 minutes or less per day with 30 minute intervals. 3 times per day.">Parent Goal: Create Monitoring System for Limiting Electronic Usage</h2>
+            <br />
+            <section class='grid-child'>
+                <label for="behavior">Monitoring system used?</label>
+                <select name="" id="monitorSystemUsed">
+                  <option value=""></option>
+                  <option value="used a monitoring system">yes</option>
+                  <option value="did not use a monitoring system">no</option>
+                </select>
+             </section>
+            <section class='grid-child'>
+                <label for="behavior">Number of 30 minute intervals </label>
+                <input type="text" name="complete-act" id="thirtyMinIntervals" class="behavior">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Number of times per day</label>
+                <input type="text" name="percent-act" id="numberOfTimes" class="behavior">
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Reported Behaviors</label>
+                <select name="" id="reportedBehaviors">
+                   <option value=""></option>
+                   <option value="protest">protest</option>
+                   <option value="calm">calm</option>
+                   <option value="tantrum">tantrum</option>
+                   <option value="inflexibile">inflexibile</option>
+                   <option value="perseveration">perseveration</option>
+               </select>
+            </section>
+            <section class='grid-child'>
+                <label for="behavior">Outcome</label>
+                <input type="text" name="percent-act" id="reportedOutcome" class="behavior">
+            </section>
+            <br />
+            <textarea style="width:600px;height:100px;" name="outputForm10" id="outputForm10"></textarea>
+            <br />
+            <input type="button" value="Submit!" onclick="goalTen();" />               
+        </div>    
+    </main>
+    
+    <script src="index.js"></script>
+</body>
+</html>

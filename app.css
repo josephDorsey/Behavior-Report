@@ -1,0 +1,224 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: white;
+}
+
+#framework {
+	display: grid;
+}
+
+textarea {
+	font-size: 16px;
+}
+
+.select-goals {
+	width: 600px;
+}
+
+input[type=text] {
+	height: 25px;
+	width: 300px;
+	font-size: 20px;
+}
+
+select {
+	height: 30px;
+	width: 150px;
+	font-size: 16px;
+	text-align: center;
+	text-align-last: center;
+}
+option {
+	text-align: left;
+}
+/* GRID CUSTOMIZATION */
+/* makes the grid */
+
+#genInfo,
+#grid-1,
+#grid-2,
+#grid-3,
+#grid-4,
+#grid-5,
+#grid-6,
+#grid-7,
+#grid-8,
+#grid-9,
+#grid-10,
+#checkBox1,
+#checkBox2,
+#checkBox3,
+#checkBox4,
+#checkBox5,
+#checkBox6,
+#checkBox7,
+#checkBox8,
+#checkBox9,
+#checkBox10 {
+	display: grid;
+	margin: 1rem 0.5rem;
+	padding: 0.7rem;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 20px;
+	background: #cddfe6;
+	-webkit-box-shadow: 2px 2px 15px -2px rgba(5, 18, 38, 0.39);
+	-moz-box-shadow: 2px 2px 15px -2px rgba(5, 18, 38, 0.39);
+	box-shadow: 2px 2px 15px -2px rgba(5, 18, 38, 0.39);
+	justify-self: center;
+}
+/* formatting the grid with columns and fractions */
+#genInfo {
+	justify-self: center;
+}
+.multiselect {
+	display: grid;
+	margin: 1rem 0.5rem;
+	padding: 0.7rem;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 20px;
+	background: #cddfe6;
+	-webkit-box-shadow: 2px 2px 15px -2px rgba(5, 18, 38, 0.39);
+	-moz-box-shadow: 2px 2px 15px -2px rgba(5, 18, 38, 0.39);
+	box-shadow: 2px 2px 15px -2px rgba(5, 18, 38, 0.39);
+}
+
+#grid-1,
+#grid-2,
+#grid-5,
+#checkBox1,
+#checkBox2,
+#checkBox5 {
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+#genInfo > h2,
+#grid-1 > h2,
+#grid-2 > h2,
+#grid-3 > h2,
+#grid-4 > h2,
+#grid-5 > h2,
+#grid-6 > h2,
+#grid-7 > h2,
+#grid-8 > h2,
+#grid-9 > h2,
+#grid-10 > h2,
+#checkBox1 > h2,
+#checkBox2 > h2,
+#checkBox3 > h2,
+#checkBox4 > h2,
+#checkBox5 > h2,
+#checkBox6 > h2,
+#checkBox7 > h2,
+#checkBox8 > h2,
+#checkBox9 > h2,
+#checkBox10 > h2 {
+	text-align: center;
+	grid-column: 1 / 7;
+	/* Grabs on to the h2 of every container and 
+	   makes it stretch from the first line of our grid to the last line of our        grid. Because we have two rows set up it fills the top one.
+	*/
+}
+
+#grid-3,
+#grid-6,
+#checkBox3,
+#checkBox6 {
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+#checkBox4,
+#grid-4 {
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+/* Dropdown Menu customizations */
+input[type="checkbox"]:checked::after {
+	border: 2px solid #a8a8a8;
+	background: #dadada;
+	background: linear-gradient(to bottom, #f0f0f0 0%, #c5c5c5 100%);
+	content: "";
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	z-index: -10;
+	border-radius: 5px;
+}
+
+input[type='checkbox'] {
+	-webkit-appearance: none;
+	width: 10px;
+	height: 10px;
+	background: white;
+	border-radius: 10px;
+	border: 2px solid #555;
+}
+
+.multiselect {
+	width: 500px;
+}
+
+.selectBox {
+	position: relative;
+}
+
+.selectBox select {
+	width: 400px;
+	font-weight: bold;
+	background: #0000;
+	border: none;
+	border-radius: 2px;
+	background: white;
+	position: relative;
+}
+
+.overSelect {
+	position: relative;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+/* ORIGINAL CODE */
+#checkboxes {
+	background-color: #295c70;
+	display: none;
+	border: 1px #dadada solid;
+	margin: 5px 0 0 0;
+	border-radius: 3px;
+	position: relative;
+	width: 440px;
+}
+
+#checkboxes label {
+	display: block;
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 5px;
+	padding: 3px 2px;
+	position: relative;
+	color: #ffffff;
+	background: rgba(0, 0, 0, 0);
+	z-index: 1;
+	font-size: 16px;
+}
+
+#checkboxes label:hover {
+	background-color: #1e90ff;
+	border-radius: 2px;
+}
+
+label {
+	display: inline-block;
+	width: 240px;
+	text-align: start;
+	font-size: 23px;
+}
